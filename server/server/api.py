@@ -18,7 +18,7 @@ def transform(request):
         # original_format = request.POST.get('original_format','')
         # to_format = request.POST.get('to_format','')
 
-        location = "http://localhost:8001/api/doc/schema/Account/"
+        location = "http://imagine.epu.ntua.gr:1988/api/doc/schema/Account/"
         original_format = "swagger"
         to_format = "raml"
         api = "123"
