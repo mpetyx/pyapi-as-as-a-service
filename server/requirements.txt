@@ -1,5 +1,0 @@
-django
-djangorestframework
-markdown
-django-filter
-gunicorn==19.1.1

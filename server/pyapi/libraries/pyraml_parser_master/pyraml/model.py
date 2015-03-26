@@ -1,6 +1,6 @@
 __author__ = 'ad'
 
-from fields import BaseField, String, List
+from server.pyapi.libraries.pyraml_parser_master.pyraml.fields import BaseField, String, List
 
 
 class ValidationError(StandardError):

@@ -4,7 +4,7 @@ import json
 
 import yaml
 
-from Serialiser import Serialiser
+from server.pyapi.serialisers import Serialiser
 
 
 class SwaggerSerialiser(Serialiser):

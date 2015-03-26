@@ -1,6 +1,6 @@
 __author__ = 'mpetyx'
 
-from Serialiser import Serialiser
+from server.pyapi.serialisers import Serialiser
 
 
 class HydraSerialiser(Serialiser):

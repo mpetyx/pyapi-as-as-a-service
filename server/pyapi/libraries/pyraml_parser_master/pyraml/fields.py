@@ -389,7 +389,7 @@ class Reference(BaseField):
     """
     Class represent reference to another model
 
-     >>> from model import Model
+     >>> from server.pyapi.libraries.pyraml_parser_master.pyraml.model import Model
      >>> class RamlDocumentation(Model):
      >>>    content = String()
      >>>    title = String()

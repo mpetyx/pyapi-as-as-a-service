@@ -2,7 +2,7 @@ __author__ = 'mpetyx'
 
 import yaml
 
-from Serialiser import Serialiser
+from server.pyapi.serialisers import Serialiser
 
 
 class RamlSerialiser(Serialiser):

@@ -1,10 +1,9 @@
 __author__ = 'mpetyx'
 
 from django.views.decorators.csrf import csrf_exempt
-from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
-import json
-from django.http import HttpResponse, request
-from pyapi import API
+from django.http import HttpResponse
+
+from server.pyapi import API
 
 
 @csrf_exempt

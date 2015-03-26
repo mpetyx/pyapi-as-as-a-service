@@ -4,7 +4,7 @@ import mimetypes
 
 import yaml
 
-from raml_elements import ParserRamlInclude
+from server.pyapi.libraries.pyraml_parser_master.pyraml.raml_elements import ParserRamlInclude
 from constants import RAML_CONTENT_MIME_TYPES
 
 

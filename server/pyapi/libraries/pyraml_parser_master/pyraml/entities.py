@@ -1,7 +1,7 @@
 __author__ = 'ad'
 
-from model import Model
-from fields import String, Reference, Map, List, Bool, Int, Float, Or
+from server.pyapi.libraries.pyraml_parser_master.pyraml.model import Model
+from server.pyapi.libraries.pyraml_parser_master.pyraml.fields import String, Reference, Map, List, Bool, Int, Float, Or
 
 
 class RamlDocumentation(Model):

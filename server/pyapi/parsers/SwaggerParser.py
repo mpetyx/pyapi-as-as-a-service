@@ -1,12 +1,12 @@
 __author__ = 'mpetyx'
 
 from collections import OrderedDict
-
 import json
 
-from Parser import Parser
-from server.pyapi.entities import APIRoot, APIResource, APIMethod, APIBody, APIResourceType, APITrait, APIQueryParameter
 import requests
+
+from server.pyapi.parsers import Parser
+from server.pyapi.entities import APIRoot, APIResource, APIMethod, APIQueryParameter
 
 
 class SwaggerParser(Parser):

@@ -2,7 +2,7 @@ __author__ = 'mpetyx'
 
 from server.pyapi.libraries.pyraml_parser_master import pyraml
 from server.pyapi.libraries.pyraml_parser_master.pyraml import parser
-from Parser import Parser
+from server.pyapi.parsers import Parser
 
 from server.pyapi.entities import APIRoot
 

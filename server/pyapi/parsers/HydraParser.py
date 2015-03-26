@@ -2,7 +2,7 @@ __author__ = 'mpetyx'
 
 from collections import OrderedDict
 
-from Parser import Parser
+from server.pyapi.parsers import Parser
 from server.pyapi.entities import APIRoot, APIResource, APIMethod
 from server.pyapi.libraries.pyhydra import Hypermedia
 

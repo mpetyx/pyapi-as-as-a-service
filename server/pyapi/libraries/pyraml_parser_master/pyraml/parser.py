@@ -9,7 +9,7 @@ from collections import OrderedDict
 
 import yaml
 
-from raml_elements import ParserRamlInclude
+from server.pyapi.libraries.pyraml_parser_master.pyraml.raml_elements import ParserRamlInclude
 from fields import String, Reference
 from entities import RamlRoot, RamlResource, RamlMethod, RamlBody, RamlResourceType, RamlTrait
 from constants import RAML_SUPPORTED_FORMAT_VERSION
