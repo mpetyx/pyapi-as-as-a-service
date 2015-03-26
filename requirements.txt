@@ -3,3 +3,6 @@ djangorestframework
 markdown
 django-filter
 gunicorn==19.1.1
+yaml
+rdflib
+rdflib-jsonld
