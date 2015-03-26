@@ -1,6 +1,6 @@
 from django.conf.urls import url
 
-from server.api import transform
+from .api import transform
 
 
 urlpatterns = [
