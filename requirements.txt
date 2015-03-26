@@ -7,3 +7,4 @@ pyyaml
 rdflib
 rdflib-jsonld
 https://github.com/mpetyx/pyapi/archive/master.zip
+helpers
