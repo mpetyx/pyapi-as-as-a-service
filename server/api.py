@@ -13,14 +13,14 @@ def transform(request):
 
 
         # api = request.POST.get('api','')
-        # location = request.POST.get('location','')
-        # original_format = request.POST.get('original_format','')
-        # to_format = request.POST.get('to_format','')
+        location = request.GET.get('location','')
+        original_format = request.GET.get('original_format','')
+        to_format = request.GET.get('to_format','')
 
-        location = "http://imagine.epu.ntua.gr:1988/api/doc/schema/Account/"
-        original_format = "swagger"
-        to_format = "raml"
-        api = "123"
+        # location = "http://imagine.epu.ntua.gr:1988/api/doc/schema/Account/"
+        # original_format = "swagger"
+        # to_format = "raml"
+        # api = "123"
 
         api_framework = API()
 
@@ -29,7 +29,7 @@ def transform(request):
         api_framework.serialise(to_format)
 
 
-        if not api:
+        if not location:
             return HttpResponse({"Please provide a Valid API!!"},status=401)
         else:
             return HttpResponse(api_framework.serialise(to_format),status=201)
