@@ -64,6 +64,7 @@ def openi(request):
             api_framework.parse(location=schema+object['path'], language="swagger")
 
             apis.append(api_framework.serialise(to_format))
+            
 
 
 
