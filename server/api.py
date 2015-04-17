@@ -57,13 +57,14 @@ def openi(request):
         api_framework = API()
         to_format = request.GET.get('to_format','')
 
+        counter = 0
         for object in objects:
-            print openi_server_url+object['path']
+            counter = counter + 1
             api_framework.parse(location=schema+object['path'], language="swagger")
 
             apis.append(api_framework.serialise(to_format))
-
-
+            if counter<=5:
+                break
 
 
 
