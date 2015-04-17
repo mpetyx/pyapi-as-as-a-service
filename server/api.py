@@ -4,6 +4,7 @@ from django.views.decorators.csrf import csrf_exempt
 from django.http import HttpResponse
 
 from pyapi import API
+import logging
 import requests
 
 
@@ -43,8 +44,9 @@ def openi(request):
 
     if request.method == 'POST' or request.method == 'GET':
 
-        openi_server_url = "http://imagine.epu.ntua.gr:1988//api/doc/resources/"
-        schema = "http://imagine.epu.ntua.gr:1988/api/doc/schema"
+        openi_server_url = "http://imagine.epu.ntua.gr:1988/api/doc/resources/"
+        openi_server_url = "http://api-builder.tools.epu.ntua.gr/web/api-docs/Core/api-docs.json"
+        schema = "http://api-builder.tools.epu.ntua.gr/web/api-docs/Core"
 
 
 
@@ -57,14 +59,11 @@ def openi(request):
         api_framework = API()
         to_format = request.GET.get('to_format','')
 
-        counter = 0
         for object in objects:
-            counter = counter + 1
+            logging.info("Accessing Object:   "+str(schema+object['path']))
             api_framework.parse(location=schema+object['path'], language="swagger")
 
             apis.append(api_framework.serialise(to_format))
-            if counter<=5:
-                break
 
 
 
