@@ -4,6 +4,7 @@ from django.views.decorators.csrf import csrf_exempt
 from django.http import HttpResponse
 
 from pyapi import API
+import requests
 
 
 @csrf_exempt
@@ -33,6 +34,40 @@ def transform(request):
             return HttpResponse({"Please provide a Valid API!!"},status=401)
         else:
             return HttpResponse(api_framework.serialise(to_format),status=201)
+
+    else:
+        return HttpResponse(status=405)
+
+@csrf_exempt
+def openi(request):
+
+    if request.method == 'POST' or request.method == 'GET':
+
+        openi_server_url = "http://imagine.epu.ntua.gr:1988//api/doc/resources/"
+        schema = "http://imagine.epu.ntua.gr:1988/api/doc/schema"
+
+
+
+        server = requests.get(openi_server_url)
+
+        objects = server.json()['apis']
+
+        apis = []
+
+        api_framework = API()
+        to_format = request.GET.get('to_format','')
+
+        for object in objects:
+            print openi_server_url+object['path']
+            api_framework.parse(location=schema+object['path'], language="swagger")
+
+            apis.append(api_framework.serialise(to_format))
+
+
+
+
+
+        return HttpResponse(apis,status=201)
 
     else:
         return HttpResponse(status=405)
