@@ -22,12 +22,13 @@ def transform(request):
         # to_format = "raml"
         # api = "123"
         if "api-docs.json" in location:
-            openi_server_url = "http://imagine.epu.ntua.gr:1988/api/doc/resources/"
+            # openi_server_url = "http://imagine.epu.ntua.gr:1988/api/doc/resources/"
             openi_server_url = "http://api-builder.tools.epu.ntua.gr/web/api-docs/Core/api-docs.json"
             schema = "http://api-builder.tools.epu.ntua.gr/web/api-docs/Core"
 
             server = requests.get(location)
             objects = server.json()['apis']
+            schema = server.json()['basePath']
 
             apis = []
 
@@ -63,7 +64,7 @@ def transform(request):
 def openi(request):
     if request.method == 'POST' or request.method == 'GET':
 
-        openi_server_url = "http://imagine.epu.ntua.gr:1988/api/doc/resources/"
+        # openi_server_url = "http://imagine.epu.ntua.gr:1988/api/doc/resources/"
         openi_server_url = "http://api-builder.tools.epu.ntua.gr/web/api-docs/Core/api-docs.json"
         schema = "http://api-builder.tools.epu.ntua.gr/web/api-docs/Core"
 
